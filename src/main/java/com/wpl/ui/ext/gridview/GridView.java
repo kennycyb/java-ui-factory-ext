@@ -56,7 +56,10 @@ public class GridView<T> implements IComponent {
 
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
+			@SuppressWarnings("unused")
 			T object = mData.get(rowIndex);
+			GridViewColumn column = (GridViewColumn) mColumnModel
+					.getColumn(columnIndex);
 
 			return null;
 		}
@@ -71,6 +74,14 @@ public class GridView<T> implements IComponent {
 
 		this.mColumnModel = new GridViewColumnModel();
 		this.mTableModel = new GridViewTableModel();
+	}
+
+	public void clearData() {
+		mData.clear();
+	}
+
+	public void addData(T data) {
+		mData.add(data);
 	}
 
 	private List<String> mProperties = new ArrayList<String>();
@@ -91,9 +102,7 @@ public class GridView<T> implements IComponent {
 
 	@Override
 	public Component getComponent() {
-
 		this.mTable = new JTable(this.mTableModel, this.mColumnModel);
-
 		return this.mTable;
 	}
 }

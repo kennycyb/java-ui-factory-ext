@@ -65,7 +65,7 @@ public final class GridViewFactory extends JxComponentFactory {
 
 				continue;
 			}
-			
+
 			if (method.getName().equals("getClass"))
 				continue;
 
@@ -75,7 +75,7 @@ public final class GridViewFactory extends JxComponentFactory {
 				// Is a getter
 
 				String name = method.getName().substring(3, 3).toUpperCase()
-						+ method.getName().substring(4);
+						+ method.getName().substring(3);
 				properties.add(name);
 
 				continue;
@@ -85,7 +85,7 @@ public final class GridViewFactory extends JxComponentFactory {
 		}
 
 		gridview.setProperties(properties);
-		
+
 		context.setComponent(gridview.getComponent());
 		context.setEnclosedComponent(new JScrollPane(gridview.getComponent()));
 	}
