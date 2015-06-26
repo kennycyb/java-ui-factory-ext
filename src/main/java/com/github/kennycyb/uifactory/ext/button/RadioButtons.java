@@ -1,4 +1,4 @@
-package com.wpl.ui.ext.button;
+package com.github.kennycyb.uifactory.ext.button;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,37 +9,31 @@ import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import com.wpl.ui.events.EventHandler;
+import com.github.kennycyb.uifactory.core.events.EventHandler;
 
 public class RadioButtons extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 7363872197150033227L;
 
-	private ButtonGroup mButtonGroup = new ButtonGroup();
-	private List<JRadioButton> mRadioButtons = new ArrayList<JRadioButton>();
-	
+	private final ButtonGroup mButtonGroup = new ButtonGroup();
+	private final List<JRadioButton> mRadioButtons = new ArrayList<JRadioButton>();
+
 	// ~ Events ----------------------------------------------------------------
-	
+
 	/**
-	 * actionPerformed - when any JRadioButton is clicked 
+	 * actionPerformed - when any JRadioButton is clicked
 	 */
-	private EventHandler<ActionEvent> actionPerformed = new EventHandler<ActionEvent>();
+	private final EventHandler<ActionEvent> actionPerformed = new EventHandler<ActionEvent>();
 
 	/**
 	 * Forward actionPerformed action to the owner of this control
 	 */
-	private final ActionListener mButtonListener = new ActionListener() {
+	private final ActionListener mButtonListener = e -> actionPerformed.invoke(e);
 
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			actionPerformed.invoke(e);
-		}
-	};
-
-	public final void addRadioButton(JRadioButton button) {
+	public final void addRadioButton(final JRadioButton button) {
 
 		button.addActionListener(mButtonListener);
 
@@ -47,5 +41,5 @@ public class RadioButtons extends JPanel {
 		mButtonGroup.add(button);
 		this.add(button);
 	}
-	
+
 }

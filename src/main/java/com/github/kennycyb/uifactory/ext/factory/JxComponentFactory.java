@@ -1,4 +1,4 @@
-package com.wpl.ui.ext.factory;
+package com.github.kennycyb.uifactory.ext.factory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
@@ -8,12 +8,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.wpl.ui.components.IComponent;
-import com.wpl.ui.factory.ComponentContext;
-import com.wpl.ui.factory.IAnnotationHandler;
-import com.wpl.ui.factory.IComponentFactory;
-import com.wpl.ui.factory.IUiFactory;
-import com.wpl.ui.factory.impl.components.awt.ComponentFactory;
+import com.github.kennycyb.uifactory.core.components.IComponent;
+import com.github.kennycyb.uifactory.core.factory.ComponentContext;
+import com.github.kennycyb.uifactory.core.factory.IAnnotationHandler;
+import com.github.kennycyb.uifactory.core.factory.IComponentFactory;
+import com.github.kennycyb.uifactory.core.factory.IUiFactory;
+import com.github.kennycyb.uifactory.core.factory.impl.components.awt.ComponentFactory;
 
 public class JxComponentFactory implements IComponentFactory {
 
