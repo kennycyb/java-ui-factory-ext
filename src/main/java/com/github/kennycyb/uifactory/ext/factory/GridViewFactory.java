@@ -1,4 +1,4 @@
-package com.wpl.ui.ext.factory;
+package com.github.kennycyb.uifactory.ext.factory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -12,10 +12,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.wpl.ui.ext.gridview.GridView;
-import com.wpl.ui.ext.gridview.GridViewColumn;
-import com.wpl.ui.ext.gridview.UiGridViewColumns;
-import com.wpl.ui.factory.ComponentContext;
+import com.github.kennycyb.uifactory.core.factory.ComponentContext;
+import com.github.kennycyb.uifactory.ext.gridview.GridView;
+import com.github.kennycyb.uifactory.ext.gridview.GridViewColumn;
+import com.github.kennycyb.uifactory.ext.gridview.UiGridViewColumns;
 
 public final class GridViewFactory extends JxComponentFactory {
 
@@ -39,8 +39,9 @@ public final class GridViewFactory extends JxComponentFactory {
 
 		try {
 			final Method method = clazz.getMethod("get" + capName, new Class<?>[0]);
-			if (method != null)
+			if (method != null) {
 				return method;
+			}
 		} catch (NoSuchMethodException | SecurityException e) {
 		}
 
@@ -53,16 +54,19 @@ public final class GridViewFactory extends JxComponentFactory {
 	}
 
 	private boolean inList(final String[] list, final String needed) {
-		for (final String item : list)
-			if (needed.equals(item))
+		for (final String item : list) {
+			if (needed.equals(item)) {
 				return true;
+			}
+		}
 
 		return false;
 	}
 
 	private GridViewColumn initGridViewColumn(final Class<?> clazz, final Method method) {
-		if (Modifier.isStatic(method.getModifiers()) || method.getParameterTypes().length != 0 || method.getName().equals("getClass"))
+		if (Modifier.isStatic(method.getModifiers()) || method.getParameterTypes().length != 0 || method.getName().equals("getClass")) {
 			return null;
+		}
 
 		if (method.getName().startsWith("is") && method.getName().length() > 2) {
 			// Is a boolean getter
@@ -99,26 +103,28 @@ public final class GridViewFactory extends JxComponentFactory {
 
 		int columnIndex = 0;
 
-		if (gvColumns != null)
+		if (gvColumns != null) {
 			for (final String name : gvColumns.value()) {
 
 				final GridViewColumn column = initGridViewColumn(cls, findGetter(cls, name));
 
-				if (column == null)
+				if (column == null) {
 					continue;
+				}
 
 				column.setModelIndex(columnIndex++);
 
 				LOGGER.debug("Adding column: {}", column.getFieldName());
 				gridview.getColumnModel().addColumn(column);
 			}
-		else {
+		} else {
 			final Method[] methods = cls.getMethods();
 			for (final Method method : methods) {
 				final GridViewColumn column = initGridViewColumn(cls, method);
 
-				if (column == null)
+				if (column == null) {
 					continue;
+				}
 
 				column.setModelIndex(columnIndex++);
 

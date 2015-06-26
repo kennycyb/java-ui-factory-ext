@@ -1,4 +1,4 @@
-package com.wpl.ui.ext.gridview;
+package com.github.kennycyb.uifactory.ext.gridview;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

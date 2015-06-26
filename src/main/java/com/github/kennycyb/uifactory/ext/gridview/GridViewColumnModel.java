@@ -1,4 +1,4 @@
-package com.wpl.ui.ext.gridview;
+package com.github.kennycyb.uifactory.ext.gridview;
 
 import javax.swing.table.DefaultTableColumnModel;
 

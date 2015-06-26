@@ -1,4 +1,4 @@
-package com.wpl.ui.ext.button;
+package com.github.kennycyb.uifactory.ext.button;
 
 public class RadioButtonEventArgs {
 

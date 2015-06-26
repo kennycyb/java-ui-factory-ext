@@ -1,12 +1,12 @@
-package com.wpl.ui.ext.gridview;
+package com.github.kennycyb.uifactory.ext.gridview;
 
 import java.awt.Component;
 
 import javax.swing.JTable;
 
-import com.wpl.ui.components.IComponent;
-import com.wpl.ui.ext.factory.GridViewFactory;
-import com.wpl.ui.factory.annotations.DefaultFactory;
+import com.github.kennycyb.uifactory.core.components.IComponent;
+import com.github.kennycyb.uifactory.core.factory.annotations.DefaultFactory;
+import com.github.kennycyb.uifactory.ext.factory.GridViewFactory;
 
 @DefaultFactory(GridViewFactory.class)
 public class GridView<T> implements IComponent {

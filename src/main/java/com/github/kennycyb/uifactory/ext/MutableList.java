@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wpl.ui.ext;
+package com.github.kennycyb.uifactory.ext;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
