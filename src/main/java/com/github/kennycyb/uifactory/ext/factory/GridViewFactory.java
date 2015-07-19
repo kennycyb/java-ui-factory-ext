@@ -53,16 +53,6 @@ public final class GridViewFactory extends JxComponentFactory {
 		return null;
 	}
 
-	private boolean inList(final String[] list, final String needed) {
-		for (final String item : list) {
-			if (needed.equals(item)) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
 	private GridViewColumn initGridViewColumn(final Class<?> clazz, final Method method) {
 		if (Modifier.isStatic(method.getModifiers()) || method.getParameterTypes().length != 0 || method.getName().equals("getClass")) {
 			return null;
