@@ -4,13 +4,13 @@
 Extended component / features to [java-ui-factory](https://github.com/kennycyb/java-ui-factory)
 
 # maven
-java-ui-factory-ext is built with maven.  To add java-ui-factory-ext, add this to pom.xml
+java-ui-factory-ext is built with maven.  To use java-ui-factory-ext, add this to pom.xml
 ```
 <dependencies>
 	<dependency>
 		<groupId>com.github.kennycyb</groupId>
-		<artifactId>java-ui-factory-core</artifactId>
-		<version>0.4-SNAPSHOT</version>
+		<artifactId>java-ui-factory-ext</artifactId>
+		<version>0.2-SNAPSHOT</version>
 	</dependency>
 </dependencies>
 ```

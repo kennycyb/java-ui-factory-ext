@@ -20,47 +20,48 @@ import javax.swing.JList;
 
 /**
  * A dynamic list component.
- * 
+ *
  * @author Kenny Chong
+ * @since 0.1
  */
-public class MutableList extends JList {
+public class MutableList<E> extends JList<E> {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -4585011537995224281L;
 
-	private final DefaultListModel mListModel;
+	private final DefaultListModel<E> mListModel;
 
 	public MutableList() {
-		super(new DefaultListModel());
-		this.mListModel = (DefaultListModel) this.getModel();
+		super(new DefaultListModel<E>());
+		this.mListModel = (DefaultListModel<E>)getModel();
 	}
 
 	/**
 	 * Append an element at the end of the list
-	 * 
+	 *
 	 * @param e
-	 * @since 1.0
+	 * @since 0.1
 	 */
-	public void addElement(Object e) {
+	public void addElement(final E e) {
 		this.mListModel.addElement(e);
 	}
 
 	/**
 	 * Remove an element.
-	 * 
+	 *
 	 * @param e
-	 * @since 1.0
+	 * @since 0.1
 	 */
-	public void removeElement(Object e) {
+	public void removeElement(final Object e) {
 		this.mListModel.removeElement(e);
 	}
 
 	/**
 	 * remove all elements.
-	 * 
-	 * @since 1.0
+	 *
+	 * @since 0.1
 	 */
 	public void removeAllElements() {
 		this.mListModel.removeAllElements();
@@ -68,12 +69,12 @@ public class MutableList extends JList {
 
 	/**
 	 * Retrieve an element from given index.
-	 * 
+	 *
 	 * @param index
 	 * @return
-	 * @since 1.0
+	 * @since 0.1
 	 */
-	public Object getElementAt(int index) {
+	public Object getElementAt(final int index) {
 		return this.mListModel.get(index);
 	}
 }

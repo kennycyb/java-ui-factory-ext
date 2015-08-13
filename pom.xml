@@ -4,7 +4,23 @@
 	<groupId>com.github.kennycyb</groupId>
 	<artifactId>java-ui-factory-ext</artifactId>
 	<version>0.2-SNAPSHOT</version>
-	<url>https://github.com/kennycyb/java-ui-factory-ext/</url>
+  <name>JAVA UI Factory components</name>
+  <description>UI components that can be used by JAVA UI Factory</description>
+  <developers>
+    <developer>
+      <id>kennycyb</id>
+      <name>Kenny Chong</name>
+      <email>kennycyb@gmail.com</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <url>https://github.com/kennycyb/java-ui-factory-ext/</url>
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/kennycyb/java-ui-factory-ext/issues</url>

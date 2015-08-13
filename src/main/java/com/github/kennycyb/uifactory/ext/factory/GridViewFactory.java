@@ -79,15 +79,15 @@ public final class GridViewFactory extends JxComponentFactory {
 	public void initialize(final ComponentContext context) {
 		super.initialize(context);
 
-		final GridView<?> gridview = (GridView<?>) context.getJxComponent();
+		final GridView<?> gridview = (GridView<?>)context.getJxComponent();
 
-		final Field field = (Field) context.getAnnotatedElement();
+		final Field field = (Field)context.getAnnotatedElement();
 
-		final ParameterizedType type = (ParameterizedType) field.getGenericType();
+		final ParameterizedType type = (ParameterizedType)field.getGenericType();
 
 		final Type actualType = type.getActualTypeArguments()[0];
 
-		final Class<?> cls = (Class<?>) actualType;
+		final Class<?> cls = (Class<?>)actualType;
 
 		final UiGridViewColumns gvColumns = field.getAnnotation(UiGridViewColumns.class);
 

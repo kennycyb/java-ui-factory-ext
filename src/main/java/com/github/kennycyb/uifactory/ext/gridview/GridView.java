@@ -8,6 +8,14 @@ import com.github.kennycyb.uifactory.core.components.IComponent;
 import com.github.kennycyb.uifactory.core.factory.annotations.DefaultFactory;
 import com.github.kennycyb.uifactory.ext.factory.GridViewFactory;
 
+/**
+ *
+ * @author Kenny Chong
+ *
+ * @param <T>
+ *            A Bean
+ * @since 0.2
+ */
 @DefaultFactory(GridViewFactory.class)
 public class GridView<T> implements IComponent {
 

@@ -6,12 +6,7 @@ import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class GridViewTableModel<T> extends AbstractTableModel {
-
-	private static Logger LOGGER = LoggerFactory.getLogger(GridViewTableModel.class);
 
 	/**
 	 *
@@ -45,13 +40,13 @@ public class GridViewTableModel<T> extends AbstractTableModel {
 
 	@Override
 	public Class<?> getColumnClass(final int columnIndex) {
-		final GridViewColumn column = (GridViewColumn) mColumnModel.getColumn(columnIndex);
+		final GridViewColumn column = (GridViewColumn)mColumnModel.getColumn(columnIndex);
 		return column.getFieldType();
 	}
 
 	@Override
 	public String getColumnName(final int column) {
-		final GridViewColumn c = (GridViewColumn) mColumnModel.getColumn(column);
+		final GridViewColumn c = (GridViewColumn)mColumnModel.getColumn(column);
 		return c.getFieldName();
 	}
 
@@ -62,7 +57,7 @@ public class GridViewTableModel<T> extends AbstractTableModel {
 			return null;
 		}
 
-		final GridViewColumn column = (GridViewColumn) mColumnModel.getColumn(columnIndex);
+		final GridViewColumn column = (GridViewColumn)mColumnModel.getColumn(columnIndex);
 		return column.getValue(object);
 	}
 
